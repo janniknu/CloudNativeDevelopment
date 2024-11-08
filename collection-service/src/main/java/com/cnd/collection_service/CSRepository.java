@@ -1,6 +1,6 @@
-package com.cnd.collection_service.repository;
+package com.cnd.collection_service;
 
-import com.cnd.collection_service.models.Collection;
+import com.cnd.collection_service.domain.models.Collection;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,16 +1,17 @@
-package com.cnd.collection_service.models;
+package com.cnd.collection_service.domain.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
-
 
 @Entity
 @Data
 @AllArgsConstructor
 @Table(name = "collections")
+@NoArgsConstructor
 public class Collection {
 
     @Id

@@ -1,8 +1,8 @@
-package com.cnd.collection_service.controller;
+package com.cnd.collection_service.adapter.api;
 
 
-import com.cnd.collection_service.services.CSService;
-import com.cnd.collection_service.models.Collection;
+import com.cnd.collection_service.domain.CSService;
+import com.cnd.collection_service.domain.models.Collection;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,8 +13,8 @@ public class CSController {
 
     private final CSService csService;
 
-    public CSController(CSService collectionService) {
-        this.csService = collectionService;
+    public CSController(CSService csService) {
+        this.csService = csService;
     }
 
     @GetMapping

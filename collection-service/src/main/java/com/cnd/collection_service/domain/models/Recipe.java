@@ -1,4 +1,4 @@
-package com.cnd.collection_service.models;
+package com.cnd.collection_service.domain.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
