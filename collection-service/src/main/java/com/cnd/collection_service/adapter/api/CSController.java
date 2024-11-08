@@ -3,6 +3,7 @@ package com.cnd.collection_service.adapter.api;
 
 import com.cnd.collection_service.domain.CSService;
 import com.cnd.collection_service.domain.models.Collection;
+import com.cnd.collection_service.domain.models.Recipe;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -40,5 +41,14 @@ public class CSController {
     @DeleteMapping("/{id}")
     public void deleteCollection(@PathVariable Long id) {
         csService.deleteCollection(id);
+    }
+    @PostMapping("/{id}/recipe")
+    public Collection addRecipe(@PathVariable Long id, @RequestBody Recipe recipe) {
+        return csService.addRecipe(id, recipe);
+    }
+
+    @DeleteMapping("/{id}/recipe")
+    public Collection removeRecipe(@PathVariable Long id, @RequestBody Recipe recipe) {
+        return csService.removeRecipe(id, recipe);
     }
 }

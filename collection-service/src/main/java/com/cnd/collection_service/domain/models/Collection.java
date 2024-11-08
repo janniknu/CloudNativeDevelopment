@@ -33,4 +33,12 @@ public class Collection {
             inverseJoinColumns = @JoinColumn(name = "recipe_id")
     )
     private List<Recipe> recipes;
+
+    public void addRecipe(Recipe recipe) {
+        this.recipes.add(recipe);
+    }
+
+    public void removeRecipe(Recipe recipe) {
+        this.recipes.remove(recipe);
+    }
 }
