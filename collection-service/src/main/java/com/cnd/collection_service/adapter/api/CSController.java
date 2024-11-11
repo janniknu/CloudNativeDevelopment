@@ -4,12 +4,15 @@ package com.cnd.collection_service.adapter.api;
 import com.cnd.collection_service.domain.CSService;
 import com.cnd.collection_service.domain.models.Collection;
 import com.cnd.collection_service.domain.models.Recipe;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+
 @RequestMapping("/collections")
+@RestController
 public class CSController {
 
     private final CSService csService;
@@ -19,27 +22,31 @@ public class CSController {
     }
 
     @GetMapping
-    public List<Collection> getAllCollections() {
-        return csService.getAllCollections();
+    public ResponseEntity<List<Collection>> getAllCollections() {
+        return new ResponseEntity<>(csService.getAllCollections(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public Collection getCollectionById(@PathVariable Long id) {
-        return csService.getCollectionById(id);
+    public ResponseEntity<Collection> getCollectionById(@PathVariable Long id) {
+        System.out.println(id);
+        return new ResponseEntity<>(csService.getCollectionById(id), HttpStatus.OK);
     }
 
     @PostMapping
     public Collection createCollection(@RequestBody Collection collection) {
+        System.out.println(collection);
         return csService.createCollection(collection);
     }
 
     @PutMapping("/{id}")
     public Collection updateCollection(@PathVariable Long id, @RequestBody Collection collection) {
+        System.out.println("ID: " + id + ", Collection: " + collection);
         return csService.updateCollection(id, collection);
     }
 
     @DeleteMapping("/{id}")
     public void deleteCollection(@PathVariable Long id) {
+        System.out.println("ID: " + id);
         csService.deleteCollection(id);
     }
     @PostMapping("/{id}/recipe")
