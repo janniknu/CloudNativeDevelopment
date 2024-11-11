@@ -26,6 +26,7 @@ public class CSController {
         return new ResponseEntity<>(csService.getAllCollections(), HttpStatus.OK);
     }
 
+    /*
     @GetMapping("/{id}")
     public ResponseEntity<Collection> getCollectionById(@PathVariable Long id) {
         System.out.println(id);
@@ -58,4 +59,6 @@ public class CSController {
     public Collection removeRecipe(@PathVariable Long id, @RequestBody Recipe recipe) {
         return csService.removeRecipe(id, recipe);
     }
+    /*
+     */
 }

@@ -12,7 +12,6 @@ import java.util.List;
 @Service
 public class CSServiceImpl implements CSService {
 
-    @Lazy
     private final CSRepository repository;
 
     public CSServiceImpl(CSRepository repository) {
@@ -21,36 +20,6 @@ public class CSServiceImpl implements CSService {
 
     @Override
     public List<Collection> getAllCollections() {
-        return repository.listAll();
+        return List.of();
     }
-
-    @Override
-    public Collection getCollectionById(Long id) {
-        return repository.findById(id);
-    }
-
-    @Override
-    public Collection createCollection(Collection collection) {
-        return null;
-    }
-
-    @Override
-    public Collection updateCollection(Long id, Collection collection) {
-        return null;
-    }
-
-    @Override
-    public void deleteCollection(Long id) {
-    }
-
-    @Override
-    public Collection addRecipe(Long collectionId, Recipe recipe) {
-        return null;
-    }
-
-    @Override
-    public Collection removeRecipe(Long collectionId, Recipe recipe) {
-        return null;
-    }
-
 }
