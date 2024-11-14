@@ -4,6 +4,7 @@ package com.cnd.collection_service.adapter.api;
 import com.cnd.collection_service.domain.CSService;
 import com.cnd.collection_service.domain.models.Collection;
 import com.cnd.collection_service.domain.models.Recipe;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

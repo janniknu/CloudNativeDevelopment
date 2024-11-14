@@ -4,6 +4,7 @@ import com.cnd.collection_service.domain.CSService;
 import com.cnd.collection_service.domain.models.Collection;
 import com.cnd.collection_service.domain.models.Recipe;
 import com.cnd.collection_service.ports.outgoing.CSRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,7 @@ public class CSServiceImpl implements CSService {
 
     @Override
     public List<Collection> getAllCollections() {
+        System.out.println(repository);
         return List.of();
     }
 }

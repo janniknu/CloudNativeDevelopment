@@ -6,12 +6,11 @@ import org.springframework.stereotype.Service;
 import com.cnd.collection_service.ports.outgoing.CSRepository;
 
 @Service
-public class JpaCSRepositoryImpl implements CSRepository {
+public class JpaCSRepositoryIm implements CSRepository {
 
     private final JpaCSRepository repo;
 
-    @Autowired
-    public JpaCSRepositoryImpl(JpaCSRepository repo) {
+    public JpaCSRepositoryIm(JpaCSRepository repo) {
         this.repo = repo;
     }
 

@@ -11,6 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @Table(name = "collections")
 @NoArgsConstructor
+@Entity
 public class CollectionEntity {
 
     @Id
@@ -19,7 +20,7 @@ public class CollectionEntity {
     private String name;
     @ManyToOne
     @JoinColumn(name = "author_id", nullable = false)
-    private User author;
+    private UserEntity author;
     private String description;
     @ManyToMany
     @JoinTable(
@@ -27,13 +28,13 @@ public class CollectionEntity {
             joinColumns = @JoinColumn(name = "collection_id"),
             inverseJoinColumns = @JoinColumn(name = "recipe_id")
     )
-    private List<Recipe> recipes;
+    private List<RecipeEntity> recipes;
 
-    public void addRecipe(Recipe recipe) {
+    public void addRecipe(RecipeEntity recipe) {
         this.recipes.add(recipe);
     }
 
-    public void removeRecipe(Recipe recipe) {
+    public void removeRecipe(RecipeEntity recipe) {
         this.recipes.remove(recipe);
     }
 }
